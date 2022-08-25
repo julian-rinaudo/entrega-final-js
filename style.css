@@ -157,8 +157,8 @@
     .btn-agregar {
         position: absolute;
         right: 10%;
-        top:0;
-        font-size: 30px;
+        top: 0;
+        font-size: 35px;
     }
 
     .btn-agregar:hover {
@@ -373,7 +373,7 @@
        position: absolute;
        right: 10%;
        top:0;
-       font-size: 30px;
+       font-size: 35px;
    }
 
    .btn-agregar:hover {
@@ -584,7 +584,7 @@
        position: absolute;
        right: 10%;
        top: 0px;
-       font-size: 30px;
+       font-size: 35px;
    }
 
    .btn-agregar:hover {
@@ -794,7 +794,7 @@
       position: absolute;
       right: 10%;
       top: 0;
-      font-size: 30px;
+      font-size: 35px;
   }
 
   .btn-agregar:hover {
@@ -997,7 +997,7 @@
         align-items: center;
         position: relative;
         bottom: 150px;
-        overflow: auto;
+        
         display: none;
     }
 
@@ -1014,7 +1014,7 @@
     .btn-agregar {
         position: absolute;
         right: 25%;
-        top: 0;
+        top: 7px;
         font-size: 35px;
     }
 

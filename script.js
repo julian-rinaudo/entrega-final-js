@@ -10,8 +10,8 @@ const marca = document.querySelector("#marca");
 const ul = document.querySelector("#tareas");
 const btnAndInput = document.querySelector("#inputButtom");
 const svg = document.querySelector("#svg");
-let id;
-let lista;
+let id = 0;
+let lista = [];
 
 /*Funciones */
 const IngresarNombre = () =>{
@@ -97,8 +97,12 @@ addEventListener("keyup",(event) => {
 })
 
 ul.addEventListener("click", (e) => {
+    
     const element = e.target;
     const elementData = element.attributes.data.value
+
+    lista = lista.filter(element =>element.id != e.target.id)
+
     if (elementData === "eliminado") {
         btnEliminar(element);
     }
@@ -110,13 +114,8 @@ ul.addEventListener("click", (e) => {
 const datos = localStorage.getItem("tareas")
 if (datos) {
     lista = JSON.parse(datos)
-    id = lista.lenght
     cargarLista(lista)
-} else {
-    /*array */
-    lista = [];
-    /*array */
-    id = 0;
-}
+} 
+
 
 IngresarNombre();
