@@ -51,6 +51,9 @@ const agregarTarea = (tarea, id) => {
 const btnEliminar = (element) => {
     element.parentNode.parentNode.removeChild(element.parentNode);
     
+    if (lista.length === 0) {
+        popUp();
+    }
 }
 
 const cargarLista = (lista) => {
@@ -59,6 +62,19 @@ const cargarLista = (lista) => {
     })
     
 
+}
+
+const popUp = () => {
+    
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Felicitaciones",
+        html: `<p>No tienes tareas pendientes</p>`,
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+    });
 }
 /*Funciones */
 
@@ -76,6 +92,8 @@ btnAgregar.addEventListener("click", () => {
     inputIngresar.value = ""
     id++
     
+    
+        
 });
 
 addEventListener("keyup",(event) => {
@@ -116,6 +134,7 @@ if (datos) {
     lista = JSON.parse(datos)
     cargarLista(lista)
 } 
+
 
 
 IngresarNombre();
