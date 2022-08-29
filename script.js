@@ -48,7 +48,7 @@ const agregarTarea = (tarea, id) => {
 }
 
 
-const btnEliminar = (element) => {
+const btnEliminar = element => {
     element.parentNode.parentNode.removeChild(element.parentNode);
 
     //Operador Ternario
@@ -56,7 +56,7 @@ const btnEliminar = (element) => {
     //Operador Ternario
 }
 
-const cargarLista = (lista) => {
+const cargarLista = lista => {
     lista.forEach(e => {
         agregarTarea(e.nombre, e.id);
     })
@@ -96,7 +96,7 @@ btnAgregar.addEventListener("click", () => {
         
 });
 
-addEventListener("keyup",(event) => {
+addEventListener("keyup", event => {
     if (event.key == "Enter") {
         const tarea = inputIngresar.value;
         if (tarea) {
@@ -114,7 +114,7 @@ addEventListener("keyup",(event) => {
     
 })
 
-ul.addEventListener("click", (e) => {
+ul.addEventListener("click", e => {
     
     const element = e.target;
     const elementData = element.attributes.data.value
