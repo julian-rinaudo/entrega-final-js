@@ -50,10 +50,10 @@ const agregarTarea = (tarea, id) => {
 
 const btnEliminar = (element) => {
     element.parentNode.parentNode.removeChild(element.parentNode);
-    
-    if (lista.length === 0) {
-        popUp();
-    }
+
+    //Operador Ternario
+    lista.length === 0 ? popUp() : "";
+    //Operador Ternario
 }
 
 const cargarLista = (lista) => {
