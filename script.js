@@ -117,7 +117,7 @@ addEventListener("keyup", event => {
 ul.addEventListener("click", e => {
     
     const element = e.target;
-    const elementData = element.attributes.data.value
+    const elementData = element.attributes.data?.value
 
     lista = lista.filter(element =>element.id != e.target.id)
 
