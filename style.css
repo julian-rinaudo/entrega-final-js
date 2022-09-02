@@ -1,11 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 
 .check {
     background-color: rgb(73, 182, 73);
+
     text-decoration: line-through;
 }
 
