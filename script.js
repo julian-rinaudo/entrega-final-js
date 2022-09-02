@@ -35,18 +35,30 @@ const IngresarNombre = () =>{
 }
 
 const agregarTarea = (tarea, id) => {
-    
-    const li = `<li class="tareas">
-                <p class="text">${tarea}</p>
-                <i class="fas fa-trash de btn-delete" data="eliminado" id="${id}"></i>
-                </li>`;
-    ul.insertAdjacentHTML("beforeend", li);
-    
-    
-    
+    const li = document.createElement("li");
+    li.classList.add("tareas");
+    const p = document.createElement("p");
+    p.classList.add("text");
+    p.textContent = tarea;
+    const icono = document.createElement("i");
+    icono.classList.add("fas", "fa-trash", "de", "btn-delete");
+    icono.setAttribute("data", "eliminado");
+    icono.setAttribute("id", id);
+   
 
+    li.appendChild(p);
+    li.appendChild(icono);
+    ul.appendChild(li);
+    
+    realizado(li);
+    
 }
 
+const realizado = li => {
+    li.addEventListener("click", () => {
+        li.classList.toggle("check")
+    })
+}
 
 const btnEliminar = element => {
     element.parentNode.parentNode.removeChild(element.parentNode);

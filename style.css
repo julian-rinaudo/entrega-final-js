@@ -216,7 +216,11 @@
 
     }
 
-    
+    .check{
+        background-color: rgb(73, 182, 73);
+        
+        text-decoration: line-through;
+    }
 
     
 
