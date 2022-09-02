@@ -10,6 +10,7 @@ const marca = document.querySelector("#marca");
 const ul = document.querySelector("#tareas");
 const btnAndInput = document.querySelector("#inputButtom");
 const svg = document.querySelector("#svg");
+
 let id = 0;
 let lista = [];
 
