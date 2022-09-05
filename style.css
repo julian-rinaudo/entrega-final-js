@@ -9,6 +9,10 @@
 
     text-decoration: line-through;
 }
+.text {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 
 /*==== SMALL DEVICE ===== */
@@ -219,6 +223,7 @@
         cursor: pointer;
 
     }
+
 
 }
 

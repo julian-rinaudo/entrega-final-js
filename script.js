@@ -10,6 +10,7 @@ const marca = document.querySelector("#marca");
 const ul = document.querySelector("#tareas");
 const btnAndInput = document.querySelector("#inputButtom");
 const svg = document.querySelector("#svg");
+const texto = document.querySelector("#text")
 
 let id = 0;
 let lista = [];
@@ -45,6 +46,7 @@ const agregarTarea = (tarea, id) => {
     icono.classList.add("fas", "fa-trash", "de", "btn-delete");
     icono.setAttribute("data", "eliminado");
     icono.setAttribute("id", id);
+    texto.textContent = "";
    
 
     li.appendChild(p);
@@ -66,6 +68,7 @@ const btnEliminar = element => {
 
     //Operador Ternario
     lista.length === 0 ? popUp() : "";
+    lista.length === 0 ? texto.textContent="Sin tareas pendientes" : "";
     //Operador Ternario
 }
 
