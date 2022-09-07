@@ -11,9 +11,13 @@ const ul = document.querySelector("#tareas");
 const btnAndInput = document.querySelector("#inputButtom");
 const svg = document.querySelector("#svg");
 const texto = document.querySelector("#text")
+const carousel = document.querySelector("#carousel");
+const arrow = document.querySelector(".testimonios");
+const url = "https://6317dc30ece2736550bc29ad.mockapi.io/usuarios";
 
 let id = 0;
 let lista = [];
+let opiniones = [];
 
 /*Funciones */
 const IngresarNombre = () =>{
@@ -26,7 +30,9 @@ const IngresarNombre = () =>{
                 titulo.innerText = `Hola ${nombre}`;
                 bienvenida.style.display = "none";
                 marca.style.display = "none"
-                svg.style.display ="none"
+                svg.style.display = "none"
+                carousel.style.display = "none"
+                arrow.style.display = "none"
                 btnAndInput.style.display = "none"
                 saludo.style.display = "block";
                 app.style.display = "block";
@@ -151,6 +157,62 @@ if (datos) {
     cargarLista(lista)
 } 
 
+// <!-- Carousel -->
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
 
+
+//Fetch
+const peticionFetch = async() => {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data;
+} 
+const CAROUSEL = async () => {
+    try {
+        opiniones = await peticionFetch();
+        opiniones.forEach((opinion) => {
+            const { imagen, nombre, apellido, descripción, id } = opinion;
+            testimonios = document.createElement("div");
+                testimonios.classList.add("swiper-slide");
+                testimonios.setAttribute("id",`${id}`)
+                testimonios.innerHTML += `<img src="${imagen}" alt="user">
+                                          <h2>${nombre}</h2>
+                                          <h3>${apellido}</h3>
+                                          <div>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                          </div>
+                                          <p>"${descripción}"</p>`;
+                carousel.appendChild(testimonios);
+        });
+    } catch (error) {
+        console.error("SE PRODUJO UN ERROR INESPERADO" )
+    }
+    
+}
+
+setTimeout(() => {
+    arrow.style.display = "flex";
+}, 1000);
 
 IngresarNombre();
+CAROUSEL();
+
+
+
+
+
