@@ -204,11 +204,13 @@ const CAROUSEL = async () => {
     }
     
 }
+//Fetch
 
+/*Hacer aparecer texto con flecha testimonios */
 setTimeout(() => {
     arrow.style.display = "flex";
 }, 1000);
-
+/*Hacer desaparecer texto con flecha testimonios*/
 window.addEventListener("scroll", () => { 
     const scroll = window.scrollY;
     scroll > 200 ? arrow.style.display = "none" : ""
