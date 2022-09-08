@@ -209,6 +209,11 @@ setTimeout(() => {
     arrow.style.display = "flex";
 }, 1000);
 
+window.addEventListener("scroll", () => { 
+    const scroll = window.scrollY;
+    scroll > 200 ? arrow.style.display = "none" : ""
+    
+})
 IngresarNombre();
 CAROUSEL();
 
