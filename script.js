@@ -105,10 +105,13 @@ btnAgregar.addEventListener("click", () => {
     const tarea = inputIngresar.value;
     if (tarea) {
         agregarTarea(tarea, id)
-        lista.push({
+        //spread operator
+        lista = [...lista, {
             nombre: tarea,
-            id: id
-        })
+            id
+        }];
+        
+        
     }
     localStorage.setItem("tareas", JSON.stringify(lista));
     inputIngresar.value = ""
